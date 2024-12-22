@@ -13,7 +13,7 @@ jobs:
         with:
           path: '.'
           bandit_flags: '-ll -o output.json -f json'
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: bandit_scan
@@ -70,7 +70,7 @@ jobs:
       - run: |
           pip install safety
           safety check -r requirements.txt --json -o output.json
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: safety
